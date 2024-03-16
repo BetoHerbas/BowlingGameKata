@@ -32,4 +32,12 @@ describe("Bowling game test", () => {
     g.rollMany(17, 0);
     expect(g.score()).toBe(16);
   });
+  it("Test one strike", () => {
+    let g = new bowlingGame();
+    g.roll(10);
+    g.roll(3);
+    g.roll(4);
+    g.rollMany(16, 0);
+    expect(g.score()).toBe(24);
+  });
 });
