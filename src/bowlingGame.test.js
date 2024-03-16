@@ -19,4 +19,9 @@ describe("Bowling game test", () => {
     }
     expect(g.score()).toBe(20);
   });
+  it("Test n rolls", () => {
+    let g = new bowlingGame();
+    g.rollMany(20, 1);
+    expect(g.score()).toBe(20); 
+  });
 });
