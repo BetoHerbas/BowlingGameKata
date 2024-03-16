@@ -24,4 +24,12 @@ describe("Bowling game test", () => {
     g.rollMany(20, 1);
     expect(g.score()).toBe(20); 
   });
+  it("Test one spare", () => {
+    let g = new bowlingGame();
+    g.roll(5);
+    g.roll(5);
+    g.roll(3);
+    g.rollMany(17, 0);
+    expect(g.score()).toBe(16);
+  });
 });
