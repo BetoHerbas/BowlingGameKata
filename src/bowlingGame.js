@@ -3,11 +3,14 @@ class bowlingGame {
     this.rolls = new Array(21).fill(0);
     this.rollIndex = 0;
   }
+  isSpare(frameIndex) {
+    return this.rolls[frameIndex] + this.rolls[frameIndex + 1] === 10;
+  }
   score() {
     let score = 0;
     let frameIndex = 0;
     for(let frame = 0; frame < 10; frame++) {
-      if (this.rolls[frameIndex] + this.rolls[frameIndex + 1] === 10) {
+      if (this.isSpare(frameIndex)) {
         score += 10 + this.rolls[frameIndex + 2];
       }else {
         score += this.rolls[frameIndex] + this.rolls[frameIndex + 1];
