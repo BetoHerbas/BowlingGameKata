@@ -5,11 +5,14 @@ class bowlingGame {
   }
   score() {
     let score = 0;
-    for(let i = 0; i < 20; i++) {
+    let i = 0;
+    for(let frame = 0; frame < 10; frame++) {
       if (this.rolls[i] + this.rolls[i + 1] === 10) {
-        score += this.rolls[i + 2];
+        score += 10 + this.rolls[i + 2];
+      }else {
+        score += this.rolls[i] + this.rolls[i + 1];
       }
-      score += this.rolls[i];
+      i += 2;
     }
     return score; 
   }
